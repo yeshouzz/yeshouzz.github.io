@@ -21,11 +21,11 @@ var yeshouzz = {
     }
     return a
   },
-  difference: function (array, valuse) {
+  difference: function (array, ...values) {
     var a = []
     var b = []
-    for (var i = 0; i < valuse.length; i++) {
-      b.push(...valuse[i])
+    for (var i = 0; i < values.length; i++) {
+      b.push(...values[i])
     }
     for (var i = 0; i < array.length; i++) {
       for (var j = 0; j < b.length; j++) {
@@ -61,15 +61,18 @@ var yeshouzz = {
     }
     return array
   },
+  flatten: function (arr) {
+    var a = []
+    for (var i = 0; i < arr.length; i++) {
+      if (Array.isArray(arr[i])) {
+        a.push(...arr[i])
+      } else {
+        a.push(arr[i])
+      }
+    }
+    return a
+  },
+  flattenDeep: function (arr) {
 
-
-
-
-
-
-
-
-
-
-
+  },
 }

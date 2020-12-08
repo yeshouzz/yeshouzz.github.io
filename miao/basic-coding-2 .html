@@ -1,0 +1,576 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <script type="norun" id="ch0105/01">
+    var n = Number(prompt('n'))
+    var y1 = Number(prompt('y'))
+    var s = y1
+    var c = 1
+    if (n == 1) {
+      console.log(s)
+    } else {
+      while (c < n) {
+        var y = Number(prompt('y'))
+        s = s + y
+        c = c + 1
+      }
+      console.log((s / n).toFixed(2))
+    }
+
+  </script>
+
+  <script type="norun" id="ch0105/02">
+    var s = 0
+    var c = 0
+    while (c < 12) {
+      var y = Number(prompt('y'))
+      s = s + y
+      c = c + 1
+    }
+    console.log('$' + (s / 12).toFixed(2));
+  </script>
+
+
+  <script type="norun" id="ch0105/03">
+    var n = Number(prompt('n'))
+    var s = 0
+    var c = 0
+    while (c < n) {
+      var y = Number(prompt('y'))
+      s = s + y
+      c = c + 1
+    }
+    console.log((s / n).toFixed(4))
+
+  </script>
+
+  <script type="norun" id="ch0105/04">
+    var n = Number(prompt('n'))
+    var sum = 0
+    var i = 0
+    while (i < n) {
+      var y = Number(prompt('y'))
+      sum = sum + y
+      i = i + 1
+    }
+    console.log(sum + ' ' + (sum / n).toFixed(5));
+
+  </script>
+
+  <script type="norun" id="ch0105/05">
+    var n = Number(prompt('n'))
+    var max = 0
+    var i = 0
+    while (i < n) {
+      var y = Number(prompt('y'))
+      if (y > max) {
+        max = y
+      } else {
+        max = max
+      }
+      i = i + 1
+    }
+    console.log(max);
+
+  </script>
+
+  <script type="norun" id="ch0105/06">
+    var n = Number(prompt('n'))
+    var max = 0
+    var min = 0
+    var i = 0
+    while (i < n) {
+      var y = Number(prompt('y'))
+      if (y >= max) {
+        max = y
+        min = min
+      } else if (y < min) {
+        max = max
+        min = y
+      } else {
+        max = max
+        min = min
+      }
+      i = i + 1
+    }
+    console.log(max - min);
+    //要是输入的全是正数，min = 0 ,跑错 ,max=-无穷 min=+无穷（足够大即可)
+  </script>
+
+  <script type="norun" id="ch0105/07">
+    var n = Number(prompt('n'))
+    var sumj = 0
+    var sumy = 0
+    var sumt = 0
+    var i = 0
+    while (i < n) {
+      var j = Number(prompt('j'))
+      var y = Number(prompt('y'))
+      var t = Number(prompt('t'))
+      sumj = sumj + j
+      sumy = sumy + y
+      sumt = sumt + t
+      i = i + 1
+    }
+    var sum = sumj + sumy + sumt
+    console.log(sumj, sumy, sumt, sum);//数值空格隔开输出，即可，不必+' '+
+  </script>
+
+
+  <script type="norun" id="ch0105/08">
+    var n = Number(prompt('n'))
+    var sum = 0
+    var i = 1
+    while (i < n) {
+      var y = Number(prompt('y'))
+      sum = sum + y
+      i = i + 1
+    }
+    var x = (n - 2) * 180 - sum
+    console.log(x + '°');
+
+  </script>
+
+
+
+  <script type="norun" id="ch0105/09">
+    var m = Number(prompt('m'))
+    var n = Number(prompt('n'))
+    var sum = 0
+    while (m <= n) {
+      if (m % 2 == 1) {
+        sum = sum + m
+      } else {
+        sum = sum
+      }
+      m = m + 1
+    }
+    console.log(sum);
+
+  </script>
+
+
+  <script type="norun" id="ch0105/10">
+    var m = Number(prompt('m'))
+    var n = Number(prompt('n'))
+    var sum = 0
+    while (m <= n) {
+      if (m % 17 == 0) {
+        sum = sum + m
+      } else {
+        sum = sum
+      }
+      m = m + 1
+    }
+    console.log(sum);
+
+  </script>
+
+  <script type="norun" id="ch0105/11">
+    var k = Number(prompt('k'))
+    var a = 0
+    var b = 0
+    var c = 0
+    var i = 0
+    while (i < k) {
+      var n = Number(prompt('n'))
+      if (n == 1) {
+        a = a + 1
+        b = b
+        c = c
+      } else if (n == 5) {
+        a = a
+        b = b + 1
+        c = c
+      } else if (n == 10) {
+        a = a
+        b = b
+        c = c + 1
+      } else {
+        a = a
+        b = b
+        c = c
+      }
+      i = i + 1
+    }
+    console.log(a);
+    console.log(b);
+    console.log(c);
+  </script>
+
+  <script type="norun" id="ch0105/12">
+    var N = Number(prompt('N'))
+    var m = Number(prompt('m'))
+    var x = 0
+    var i = 0
+    while (i < N) {
+      var n = Number(prompt('n'))
+      if (n == m) {
+        x = x + 1
+      } else {
+        x = x
+      }
+      i = i + 1
+    }
+    console.log(x);
+  </script>
+
+
+
+  <script type="norun" id="ch0105/13">
+    var a = Number(prompt('a'))
+    var n = Number(prompt('n'))
+    console.log(a ** n)
+
+  </script>
+
+  <script type="norun" id="ch0105/14">
+    var x = Number(prompt('x'))
+    var n = Number(prompt('n'))
+    console.log((x * (1 + 0.001) ** n).toFixed(4));
+  </script>
+
+
+  <script type="norun" id="ch0105/15">
+    var R = Number(prompt('R'))
+    var M = Number(prompt('M'))
+    var Y = Number(prompt('Y'))
+
+    console.log((M * (1 + R / 100) ** Y).toFixed(0))
+  </script>
+
+  <script type="norun" id="ch0105/16">
+    var N = Number(prompt('N'))
+    var K = Number(prompt('K'))
+    var J = 20 * N - 200 * (1 + K / 100) ** 20
+    if (J >= 0) {
+      var i = 1
+      var c = 0
+      var sum = 0
+      var n = 0
+      while (i <= 20) {
+        sum = i * N
+        c = 200 * (1 + K / 100) ** i
+        if (sum - c >= 0) {
+          console.log(i)
+          i = 30
+        }
+        i = i + 1
+      }
+    } else {
+      console.log('Impossible');
+    }
+// 应该有问题
+  </script>
+
+  <script type="norun" id="ch0105/17">
+    var k = Number(prompt('k'))
+    var a = 1
+    var b = 0
+    for (var i = 0; i < k; i++) {
+      var c = a + b
+      a = b
+      b = c//巧用赋值
+    }
+    console.log(c)
+
+  </script>
+
+
+  <script type="norun" id="ch0105/18">
+    var n = Number(prompt('n'))
+    var x1 = Number(prompt('x1'))
+    var y1 = Number(prompt('y1'))
+    var i = 2
+    while (i <= n) {
+      var x0 = Number(prompt('x'))
+      var y0 = Number(prompt('y'))
+      if (y1 / x1 - y0 / x0 > 0.05) {
+        console.log('worse');
+      } else if (y0 / x0 - y1 / x1 > 0.05) {
+        console.log('better');
+      } else {
+        console.log('same');
+      }
+      i = i + 1
+    }
+  </script>
+  <script type="norun" id="ch0105/19">
+    var n = Number(prompt('n'))
+    var i = 0
+    var s = 0
+    while (i < n) {
+      var x = Number(prompt('x'))
+      var y = Number(prompt('y'))
+      var a = Number(prompt('a'))
+      s = s + 2 * Math.sqrt(x * x + y * y) / 50 + 1.5 * a
+      i = i + 1
+    }
+    console.log(Math.ceil(s))
+  </script>
+
+  <script type="norun" id="ch0105/20">
+    var h = Number(prompt('h'))
+    var i = 1
+    var sum = h
+    while (i < 10) {
+      h = h / 2
+      sum = sum + h * 2
+      i = i + 1
+    }
+    console.log(sum);
+    console.log(h / 2);
+    //注意下落与上升前后
+  </script>
+
+
+  <script type="norun" id="ch0105/21">
+    var n = Number(prompt('n'))
+    var c = 0
+    while (n != 1) {
+      if (n % 2 == 0) {
+        c = n
+        n = n / 2
+        console.log(c + '/' + 2 + '=' + n);
+      } else {
+        c = n
+        n = 3 * n + 1
+        console.log(3 + '*' + c + '+' + 1 + '=' + n);
+      }
+    }
+    console.log('End');
+
+  </script>
+  <script type="norun" id="ch0105/22">
+    var m = 0
+    var s = 0
+    var flag = false
+    for (var y = 1; y <= 12; y++) {
+      m += 300
+      var x = Number(prompt())
+      if (m < x) {
+        console.log(-y)
+        flag = true
+        break
+      }
+      m = m - x
+      if (m >= 100) {
+        var l = m % 100
+        s += m - l
+        m = l
+      }
+    }
+    if (!flag) {
+      console.log(s * 1.2 + m);
+    }
+
+  </script>
+  <script type="norun" id="ch0105/23">
+    var m = Number(prompt())//总量
+    var n = Number(prompt())//r人数
+    var c = 0 //取不上药的人数
+    for (var i = 0; i < n; i++) {
+      var need = Number(prompt())
+      m -= need
+      if (m < 0) {
+        m += need
+        c++
+      }
+    }
+    console.log(c)
+
+  </script>
+
+  <script type="norun" id="ch0105/24">
+    var max = 0
+    var c = 0
+    var n = Number(prompt('n'))
+    for (var i = 0; i < n; i++) {
+      var a = Number(prompt('a'))
+      var b = Number(prompt('b'))
+      if (a >= 90 && a <= 140 && b >= 60 && b <= 90) {
+        c++
+      } else if (c > max) {
+        max = c
+        c = 0
+      } else {
+        max = max
+        c = 0
+      }
+    }
+    console.log(c);
+
+  </script>
+
+  <script type="norun" id="ch0105/25">
+    for (var n = 100; n < 999; n++) {
+      var a = (n % 7)//7进个位数
+      var b = ((n - a) / 7) % 7//7进7位数
+      var c = (((n - a) / 7) - b) / 7//7进49位数
+      var d = (n % 9)//9进个位数
+      var e = ((n - d) / 9) % 9//9进9位数
+      var f = (((n - d) / 9) - e) / 9//9进81位数
+
+      if ((n % 7) == (((n - d) / 9) - e) / 9 && ((n - a) / 7) % 7 == ((n - d) / 9) % 9 && (((n - a) / 7) - b) / 7 == (n % 9)) {
+        console.log(n)
+        console.log(a * 100 + b * 10 + c)
+        console.log(d * 100 + e * 10 + f)//直接拼接''+a +b+ c
+      }
+    }
+
+  </script>
+
+  <script type="norun" id="ch0105/26">
+    var n = Number(prompt('n'))
+    var f = 0
+    for (var i = 0; i < n; i++) {
+      var a = Number(prompt())
+      var b = a % 10
+      var c = (a - b) % 100 / 10
+      var d = (a - b - 10 * c) % 1000 / 100
+      var e = (a - b - 10 * c - 100 * d) / 1000
+      if (b - c - d - e > 0) {
+        f++
+      }
+    }
+    console.log(f);
+
+  </script>
+
+
+
+  <script type="norun" id="ch0105/27">
+    var K = Number(prompt('K'))
+    var s = 0
+    for (var n = 1; ; n++) {
+      s = s + 1 / n
+      if (s > K) {
+        break;
+      }
+    }
+    console.log(n);
+  </script>
+
+
+
+  <script type="norun" id="ch0105/28">
+    var n = Number(prompt("n"))
+    var a = 0
+    var y = ''
+    for (var i = 1; 10 ** i < n; i++) {
+      a = Math.floor(n % (10 ** i) / 10 ** (i - 1))
+      y = y + a + ' '
+    }
+    var x = Math.floor(n / 10 ** (i - 1))
+    console.log(y + x);
+
+  </script>
+
+  <script type="norun" id="ch0105/29">
+    var n = Number(prompt("n"))
+    var a = 0
+    var y = ''
+    if (n > 0) {
+      for (var i = 1; 10 ** i < n; i++) {
+        a = Math.floor(n % (10 ** i) / 10 ** (i - 1))
+        y = y + a
+      }
+      var x = Math.floor(n / 10 ** (i - 1))
+      console.log(Number(y + x));
+    } else {
+      for (var i = 1; 10 ** i < -n; i++) {
+        a = Math.floor((-n) % (10 ** i) / 10 ** (i - 1))
+        y = y + a
+      }
+      var x = Math.floor((-n) / 10 ** (i - 1))
+      console.log(Number('-' + y + x));
+    } 
+  </script>
+  <script type="norun" id="ch0105/30">
+    var m = Number(prompt())
+    var k = Number(prompt())
+    var x = 0
+    for (var i = 1; 10 ** i < m; i++) {
+      a = Math.floor(m % (10 ** i) / 10 ** (i - 1))
+      if (a == 3) {
+        x = x + 1
+      } else {
+        x = x
+      }
+    }
+    var b = Math.floor(m / 10 ** (i - 1))
+    if (b == 3) {
+      x = x + 1
+    }
+    if (x == k && m % 19 == 0) {
+      console.log('YES')
+    } else {
+      console.log('NO');
+    }
+
+    <!-- 求一个数每位的数字 循环写法
+      while (m > 0 ){
+        var a =m&10  a为个位数
+        if(a==3){
+          b++  3出现次数
+        }
+        m = (m -a) /10
+      }
+     -->
+  </script>
+  <script type="norun" id="ch0105/31">
+    var n = Number(prompt())
+    var m = Number(prompt())
+    var result = ''
+    for (var i = 1; i <= n; i++) {
+      var light = true
+      for (var p = 1; p <= m; p++) {
+        if (i % p) {
+          light = !light
+        }
+      }
+      if (light == false) {
+        result = result + i + ',';
+      }
+    }
+    console.log(result.slice(0, -1));
+  </script>
+  <script type="norun" id="ch0105/32">
+    var n = Number(prompt())
+    var a = 1
+    var b = 1
+    for (var i = 1; i <= n; i++) {
+      c = a + b
+      sum += c / b
+      a = b 
+      b = c
+    }
+    console.log((sum));
+  </script>
+
+  <script type="norun" id="ch0105/33">
+    var n = Number(prompt('n'))
+    var s = 0
+    for (var i = 1; i <= n; i++) {
+      var c = (-1) ** (i - 1) / i
+      s = s + c
+    }
+    console.log(s)
+  </script>
+  <script xtype="norun" id="ch0105/34">
+    var n = Number(prompt())
+    var sum = 0
+    for (var i = 1; i < n; i++) {
+      for (var j = 2; j <= n; j++) {
+        sum = sum + i * j
+      }
+    }
+    console.log(sum);
+  </script>
+</body>
+
+</html>

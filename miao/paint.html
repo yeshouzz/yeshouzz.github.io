@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas width="400" height="300"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated'
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    x = x | 0
+    y = y | 0
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+
+  function line(x1, y1, x2, y2) {
+    ctx.strokeStyle = 'black'
+    ctx.moveTo(x1, y1)
+    ctx.lineTo(x2, y2)
+    ctx.stroke()
+  }
+  /**
+   * YOUR TASK
+画图的题：
+画一条实线
+画一条一个实点一个空点的虚线
+画一条两个实点两个空点的虚线
+画一条三个实点两个空点的虚线
+画一条45度的斜线
+画一条30度的斜线（选做）
+在四个角画分别画一条45度的斜线以让画面看起来像一个相框
+画一条跨越画布左上角和右下角的对角线
+画一个空心矩形
+画一个实心矩形
+画一个rgb色彩空间的某一面
+画一个空心的圆
+画一个实心的圆
+画一个大小合适的sin(x)的图像
+   */
+</script>
+<script>
+  // YOUR CODE GOES BELOW
+  var b = 5
+  for (var a = 0; a <= 400; a++)
+    console.log(dot(a, b, 'red'))
+  var d = 10
+  for (var c = 0; c <= 400; c += 2)
+    console.log(dot(c, d, 'red'))
+  var f = 15
+  for (var e = 0; e <= 400; e += 4)
+    console.log(dot(e, f, 'red'))
+  for (var g = 1; g <= 400; g += 4)
+    console.log(dot(g, f, 'red'))
+  var h = 20
+  for (var i = 0; i <= 400; i += 5)
+    console.log(dot(i, h, 'red'))
+  for (var j = 1; j <= 400; j += 5)
+    console.log(dot(j, h, 'red'))
+  for (var k = 2; k <= 400; k += 5)
+    console.log(dot(k, h, 'red'))
+  for (var l = 0; l <= 300; l++)
+    console.log(dot(l, 300 - l, 'red'))
+  for (var m = 0; m <= 400; m++)
+    console.log(dot(m, m / Math.sqrt(3), 'red'))
+  var n = 5
+  for (var o = 0; o <= 300; o++)
+    console.log(dot(n, o, 'red'))
+  var p = 395
+  for (var q = 0; q <= 300; q++)
+    console.log(dot(p, q, 'red'))
+  var r = 295
+  for (a = 0; a <= 400; a++)
+    console.log(dot(a, r, 'red'))
+  for (var s = 0; s <= 50; s++)
+    console.log(dot(s, 50 - s, 'red'))
+  for (var s = 350; s <= 400; s++)
+    console.log(dot(s, s - 350, 'red'))
+  for (var s = 0; s <= 50; s++)
+    console.log(dot(s, s + 250, 'red'))
+  for (var s = 350; s <= 400; s++)
+    console.log(dot(s, 650 - s, 'red'))
+  for (var x = 0; x <= 400; x++)
+    console.log(dot(x, 3 * x / 4, 'red'))
+  for (var x = 50; x <= 100; x++)
+    console.log(dot(x, 100, 'red'))
+  for (var x = 50; x <= 100; x++)
+    console.log(dot(x, 150, 'red'))
+  for (var x = 100; x <= 200; x++)
+    console.log(dot(100, x, 'red'))
+  for (var x = 100; x <= 200; x++)
+    console.log(dot(50, x, 'red'))
+  for (var x = 50; x <= 100; x++)
+    console.log(dot(x, 200, 'red'))
+  for (var x = 50; x <= 100; x++)
+    for (var y = 150; y <= 200; y++)
+      console.log(dot(x, y, 'red'))
+  for (var x = -50; x <= 50; x++)
+    for (var y = -50; y <= 50; y++) {
+      a = 150 + x
+      b = Math.sqrt(2500 - x * x) + 250
+      console.log(dot(a, b, 'red'))
+    }
+  for (var x = -50; x <= 50; x++)
+    for (var y = -50; y <= 50; y++) {
+      a = 150 + x
+      b = 250 - Math.sqrt(2500 - x * x)
+      console.log(dot(a, b, 'red'))
+    }
+  for (var x = 0; x <= 400; x++) {
+    var y = 100 * Math.sin(x / 200 * Math.PI) + 150
+    console.log(dot(x, y, 'blue'))
+  }
+  for (var x = -50; x <= 50; x++) {
+    a = 250 - Math.sqrt(2500 - x * x)
+    b = Math.sqrt(2500 - x * x) + 250
+
+    for (var y = a; y <= b; y++) {
+
+      console.log(dot(x + 250, y, 'red'))
+    }
+  }
+
+
+
+
+</script>
+
+</html>

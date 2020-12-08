@@ -23,24 +23,41 @@ var yeshouzz = {
   },
   difference: function (array, valuse) {
     var a = []
+    var b = []
+    for (var i = 0; i < valuse.length; i++) {
+      b.push(...valuse[i])
+    }
     for (var i = 0; i < array.length; i++) {
-      for (var j = 0; j < valuse.length; j++) {
-        if (array[i] == valuse[j]) {
+      for (var j = 0; j < b.length; j++) {
+        if (array[i] == b[j]) {
           break
         }
-        if (j == valuse.length - 1) {
+        if (j == b.length - 1) {
           a.push(array[i])
         }
       }
     }
     return a
   },
-  drop: function (array, n) {
-    if (n == 0) return array
-    if (!n) n = 1
+  drop: function (array, n = 1) {
     while (n > 0) {
       array.shift()
       n--
+    }
+    return array
+  },
+  dropRight: function (array, n = 1) {
+    while (n > 0 && array) {
+      array.pop()
+      n--
+    }
+    return array
+  },
+  fill: function (array, value, start = 0, end = array.length) {
+    for (var i = 0; i < array.length; i++) {
+      if (i >= start && i < end) {
+        array[i] = value
+      }
     }
     return array
   },

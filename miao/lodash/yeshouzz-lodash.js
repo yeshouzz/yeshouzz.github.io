@@ -85,15 +85,44 @@ var yeshouzz = {
           a.push(it)
         }
       })
-      flDeep(arr)
-      return a
     }
+    flDeep(arr)
+    return a
   },
   concat: function (array, ...values) {
+    var a = []
+    a.push(...array)
     for (var i = 0; i < values.length; i++) {
-      array.push(...values[i])
+      if (Array.isArray(values[i])) {
+        a.push(...values[i])
+      } else {
+        a.push(values[i])
+      }
     }
-    return array
+    return a
+  },
+  head: function (array) {
+    if (Array.isArray(array)) {
+      return array[0]
+    } else {
+      return undefined
+    }
+  },
+  flattenDepth: function (arr, depth = 1) {
+    var a = []
+    if (depth = 0) return arr;
+    var flDeep = function (arr, depth) {
+      arr.forEach((it) => {
+        if (Array.isArray(it) && depth > 0) {
+          flDeep(it)
+          depth--
+        } else {
+          a.push(it)
+        }
+      })
+    }
+    flDeep(arr)
+    return a
   },
 
 

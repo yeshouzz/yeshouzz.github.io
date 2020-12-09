@@ -73,6 +73,34 @@ var yeshouzz = {
     return a
   },
   flattenDeep: function (arr) {
-
+    var a = []
+    var flDeep = function (arr) {
+      if (!Array.isArray(arr)) {
+        return arr
+      }
+      arr.forEach((it) => {
+        if (Array.isArray(it)) {
+          flDeep(it)
+        } else {
+          a.push(it)
+        }
+      })
+      flDeep(arr)
+      return a
+    }
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

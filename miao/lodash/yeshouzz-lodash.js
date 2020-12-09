@@ -89,6 +89,12 @@ var yeshouzz = {
       return a
     }
   },
+  concat: function (array, ...values) {
+    for (var i = 0; i < values.length; i++) {
+      array.push(...values[i])
+    }
+    return array
+  },
 
 
 

@@ -114,15 +114,29 @@ var yeshouzz = {
     var flDeep = function (arr, depth) {
       arr.forEach((it) => {
         if (Array.isArray(it) && depth > 0) {
-          flDeep(it)
-          depth--
+          flDeep(it, depth--)
         } else {
           a.push(it)
         }
       })
     }
-    flDeep(arr)
+    flDeep(arr, depth)
     return a
+  },
+  indexOf: function (array, value, fromIndex = 1) {
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] == value) {
+        fromIndex--
+        if (fromIndex == 0) {
+          break
+        }
+      }
+    }
+    return i
+  },
+  initial: function (array) {
+    array.pop()
+    return array
   },
 
 

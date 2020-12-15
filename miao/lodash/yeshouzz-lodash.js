@@ -120,6 +120,7 @@ var yeshouzz = {
         }
       })
     }
+    return a
   },
   indexOf: function (array, value, fromIndex = 1) {//考虑多次循环的数以及负数，记录相等的个数x，fromIndex % x
     var a = 0
@@ -154,7 +155,7 @@ var yeshouzz = {
     var y = []
     var b = array.length
     for (var i = 0; i < b; i++) {
-      a.push(...values[i])
+      a.push(...array[i])
     }
     for (var i = 0; i < ary.length; i++) {
       var x = 0
@@ -169,8 +170,8 @@ var yeshouzz = {
     }
     return y
   },
-  join: function (array, separator = ',') {
-    var a = array[0]
+  join: function (array, separator) {
+    var a = array[0] + ''
     for (var i = 1; i < array.length; i++) {
       a = a + separator + array[i]
     }
@@ -191,14 +192,14 @@ var yeshouzz = {
       if (b == 0) {
         return a[0]
       }
-      return a[length - b]
+      return a[a.length - b]
     }
     if (fromIndex < 0) {
       var b = -fromIndex % a.length
       if (b == 0) {
-        return a[length - 1]
+        return a[a.length - 1]
       }
-      return a[b - 1]
+      return (a[b - 1]) - array.length
     }
   },
 

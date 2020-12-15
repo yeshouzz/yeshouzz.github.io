@@ -108,17 +108,16 @@ var yeshouzz = {
       return undefined
     }
   },
-  flattenDepth: function (arr, depth = 1) {
+  flattenDepth: function (ary, depth = 0) {
     var a = []
-    if (depth = 0) return arr;
-    var flDeep = function (arr, depth) {
-      arr.forEach((it) => {
-        if (Array.isArray(it) && depth > 0) {
-          a.push(...flDeep(it, --depth))
-        } else {
-          a.push(it)
-        }
-      })
+    for (var i = 0; i < ary.length; i++) {
+      if (Array.isArray(ary[i]) && depth > 0) {
+        depth--
+        var arys = this.flattenDepth(ary[i], depth)
+        a.push(...arys)
+      } else {
+        a.push(ary[i])
+      }
     }
     return a
   },
@@ -160,7 +159,7 @@ var yeshouzz = {
     for (var i = 0; i < ary.length; i++) {
       var x = 0
       for (var j = a.length - 1; 0 <= j; j--) {
-        if (ary[i] = a[j]) {
+        if (ary[i] == a[j]) {
           x++
         }
       }
@@ -199,13 +198,88 @@ var yeshouzz = {
       if (b == 0) {
         return a[a.length - 1]
       }
-      return (a[b - 1]) - array.length
+      return ((a[b - 1]) - array.length)
     }
   },
+  nth: function (array, n = 0) {
+    if (n > 0) {
+      return array[n]
+    }
+    if (n < 0) {
+      return array[array.length + n]
+    }
+    return array[0]
+  },
+  pull: function (array, ...values) {
+    var a = []
+    var b = []
+    for (var i = 0; i < values.length; i++) {
+      a.push(values[i])
+    }
+    for (var j = 0; j < array.length; j++) {
+      var x = 0
+      for (var i = 0; i < a.length; i++) {
+        if (array[j] != a[i]) {
+          x++
+        } else {
+          break
+        }
+      }
+      if (x == a.length) {
+        b.push(array[j])
+      }
+    }
+    return b
+  },
+  pullAll: function (array, values) {
+    var a = []
+    for (var j = 0; j < array.length; j++) {
+      var x = 0
+      for (var i = 0; i < values.length; i++) {
+        if (array[j] != values[i]) {
+          x++
+        } else {
+          break
+        }
+      }
+      if (x == values.length) {
+        a.push(array[j])
+      }
+    }
+    return a
+  },
+  reverse: function (array) {
+    var j = array.length - 1
+    for (var i = 0; i < j; i++) {
+      var a = array[i]
+      array[i] = array[j]
+      array[j] = a
+      j--
+    }
+    return array
+  },
+  sortedIndex: function (array, value) {
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] >= value) {
+        return i
+      }
+    }
+  },
+  union: function (...arrays) {
+    var a = arrays.length
+    var b = {}
+    var c = []
+    for (var i = 0; i < a; i++) {
+      for (var j = 0; j < arrays[i].length; j++) {
+        if (array[i][j] in b) {
 
-
-
-
-
+        } else {
+          b[array[i][j]] = 1
+          c.push(array[i][j])
+        }
+      }
+    }
+    return c
+  },
 
 }

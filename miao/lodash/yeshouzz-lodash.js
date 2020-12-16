@@ -196,7 +196,7 @@ var yeshouzz = {
     if (fromIndex < 0) {
       var b = -fromIndex % a.length
       if (b == 0) {
-        return a[a.length - 1]
+        return (a[a.length - 1] - array.length)
       }
       return ((a[b - 1]) - array.length)
     }
@@ -271,15 +271,54 @@ var yeshouzz = {
     var c = []
     for (var i = 0; i < a; i++) {
       for (var j = 0; j < arrays[i].length; j++) {
-        if (array[i][j] in b) {
+        if (arrays[i][j] in b) {
 
         } else {
-          b[array[i][j]] = 1
-          c.push(array[i][j])
+          b[arrays[i][j]] = 1
+          c.push(arrays[i][j])
         }
       }
     }
     return c
   },
+  uniq: function (array) {
+    var a = {}
+    var b = []
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] in a) {
+
+      } else {
+        a[array[i]] = 1
+        b.push(array[i])
+      }
+    }
+    return b
+  },
+  unzip: function (array) {
+    var a = array.length
+    var b = array[0].length
+    var c = []
+    for (var i = 0; i < b; i++) {
+      c[i] = []
+    }
+    for (var i = 0; i < a; i++) {
+      for (var j = 0; j < b; j++) {
+        c[j].push(array[i][j])
+      }
+    }
+    return c
+  },
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

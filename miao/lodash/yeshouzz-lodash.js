@@ -308,9 +308,74 @@ var yeshouzz = {
     }
     return c
   },
-
-
-
+  fromPairs: function (pairs) {
+    var a = {}
+    for (var i = 0; i < pairs.length; i++) {
+      a[pairs[i][0]] = pairs[i][1]
+    }
+    return a
+  },
+  unionBy: function (...arrays) {
+    var f = arrays.pop()
+    if (f.__proto__ === Function.prototype) {
+      var a = arrays.length
+      var b = {}
+      var c = []
+      for (var i = 0; i < a; i++) {
+        for (var j = 0; j < arrays[i].length; j++) {
+          if (!(f(arrays[i][j]) in b)) {
+            b[f(arrays[i][j])] = 1
+            c.push(arrays[i][j])
+          }
+        }
+      }
+      return c
+    }
+    if (f.__proto__ === String.prototype) {
+      this.flattenDeep(arrays)
+      var x = {}
+      var y = []
+      for (var i = 0; i < arrays.length; i++) {
+        if (!(arrays[i].key in x)) {
+          x[arrays[i].key] = arrays[i][key]
+        }
+      }
+      y.push(x)
+      return y
+    }
+  },
+  without: function (array, ...values) {
+    var result = {}
+    var re = []
+    for (var i = 0; i < values.length; i++) {
+      result[values[i]] = 1
+    }
+    for (var j = 0; j < array.length; j++) {
+      if (!(array[j] in result)) {
+        re.push(array[j])
+      }
+    }
+    return re
+  },
+  xor: function (...arrays) {
+    var a = []
+    for (var i = 0; i < arrays.length; i++) {
+      a.push(...arrays[i])
+    }
+    var b = []
+    for (var i = 0; i < a.length; i++) {
+      var x = 0
+      for (var j = a.length - 1; j >= 0; j--) {
+        if (a[i] != a[j]) {
+          x++
+        }
+      }
+      if (x == a.length - 1) {
+        b.push(a[i])
+      }
+    }
+    return b
+  },
 
 
 

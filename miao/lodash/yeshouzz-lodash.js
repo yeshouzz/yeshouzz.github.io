@@ -331,7 +331,7 @@ var yeshouzz = {
       }
       return c
     }
-    if (f.__proto__ === String.prototype) {
+    if (f.__proto__ === Object.prototype) {
       this.flattenDeep(arrays)
       var x = {}
       var y = []
@@ -376,8 +376,18 @@ var yeshouzz = {
     }
     return b
   },
-
-
+  zip: function (...arrays) {
+    var a = []
+    for (var i = 0; i < arrays[0].length; i++) {
+      a[i] = []
+    }
+    for (var j = 0; j < arrays[0].length; j++) {
+      for (var i = 0; i < arrays.length; i++) {
+        a[j].push(arrays[i][j])
+      }
+    }
+    return a
+  },
 
 
 

@@ -388,7 +388,28 @@ var yeshouzz = {
     }
     return a
   },
-
+  countBy: function (collection, predicate) {
+    var obj = {}
+    if (predicate.__proto__ == Function.prototype) {
+      collection.forEach(it => {
+        if (predicate(it) in obj) {
+          obj[predicate(it)]++
+        } else {
+          obj[predicate(it)] = 1
+        }
+      })
+    }
+    if (predicate == "length") {
+      collection.forEach(it => {
+        if (it.length in obj) {
+          obj[it.length]++
+        } else {
+          obj[it.length] = 1
+        }
+      })
+    }
+    return obj
+  },
 
 
 

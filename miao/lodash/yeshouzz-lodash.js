@@ -332,12 +332,12 @@ var yeshouzz = {
       return c
     }
     if (f.__proto__ === Object.prototype) {
-      this.flattenDeep(arrays)
+      var a = this.flattenDeep(arrays)
       var x = {}
       var y = []
-      for (var i = 0; i < arrays.length; i++) {
-        if (!(arrays[i].key in x)) {
-          x[arrays[i].key] = arrays[i][key]
+      for (var i = 0; i < a.length; i++) {
+        if (!(a[i].key in x)) {
+          x[a[i].key] = a[i][key]
         }
       }
       y.push(x)

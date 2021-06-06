@@ -1,0 +1,87 @@
+#mine{
+  margin: 50px auto;
+}
+.level{
+  text-align: center;
+  margin-bottom: 10px;
+}
+.level button{
+  padding: 5px 15px;
+  background-color: rgb(76, 76, 207);
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+.level button.active{
+  background: blue;
+}
+table{
+  border-spacing:1px;
+  background: darkgrey;
+  margin: 0 auto;
+}
+td{
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  background: #ccc;
+  border: 2px solid;
+  border-color: #fff #a1a1a1 #a1a1a1 #fff;
+  text-align: center;
+  line-height: 20px;
+  font-weight: bold;
+}
+.info{
+  margin-top:10px ;
+  text-align: center;
+}
+.mine{
+  background: #d9d9d9 url(mine.png);
+  background-size: cover;
+}
+.flag{
+  background: #ccc url(flag.png);
+  background-size: cover;
+}
+.a1{
+  color: rgb(204, 43, 51);
+  border-color:rgb(201, 201, 201);
+  background: #d9d9d9;
+}
+.a2{
+  color:blue;
+  border-color: rgb(201, 201, 201);;
+  background: #d9d9d9;
+}
+.a3{
+  color:brown;
+  border-color: rgb(201, 201, 201);;
+  background: #d9d9d9;
+}
+.a4{
+  color: seagreen;
+  border-color: rgb(201, 201, 201);;
+  background: #d9d9d9;
+}
+.a5{
+  color: rgb(194, 84, 139);
+  border-color: rgb(201, 201, 201);;
+  background: #d9d9d9;
+}
+.a6{
+  color: rgb(214, 228, 15);
+  border-color: rgb(201, 201, 201);;
+  background: #d9d9d9;
+}
+.a7{
+  color: rgb(3, 41, 41);
+  border-color: rgb(201, 201, 201);;
+  background: #d9d9d9;
+}
+.a8{
+  color: rgb(45, 119, 57);
+  border-color: rgb(201, 201, 201);;
+  background: #d9d9d9;
+}
